@@ -8,14 +8,14 @@ terraform {
 }
 
 provider "google" {
-  credentials = file("~/.google/credentials/terraform-keys.json")
-  project     = "us-accidents-418522"
-  region      = "us-east1-b"
+  credentials = file(var.credentials)
+  project     = var.project
+  region      = var.region
 } 
 
 resource "google_storage_bucket" "auto-expire" {
-  name          = "us-accidents-418522_data_lake"
-  location      = "US"
+  name          = "${var.project}_${var.gcs_bucket_name}"
+  location      = var.location
   force_destroy = true
 
   lifecycle_rule {
@@ -26,4 +26,10 @@ resource "google_storage_bucket" "auto-expire" {
       type = "AbortIncompleteMultipartUpload"
     }
   }
+}
+
+//Resource name "Name of the resource block within terraform"
+resource "google_bigquery_dataset" "us_accidents_dataset" {
+  dataset_id = var.bq_dataset_name
+  location   = var.location
 }

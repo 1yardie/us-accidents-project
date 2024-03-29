@@ -6,7 +6,7 @@ from airflow.operators.python import PythonOperator
 
 
 with DAG(
-    dag_id="data_ingestion_gcs_dag",
+    dag_id="data_ingestion_gcs_local",
     start_date=datetime.datetime(2021, 1, 1),
     schedule="@daily",
 ):
