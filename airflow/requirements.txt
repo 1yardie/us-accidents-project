@@ -1,3 +1,7 @@
 apache-airflow-providers-google
 pyarrow
-gcloud
+gcloud 
+google-cloud-bigquery 
+kaggle 
+google-cloud-storage
+pyspark
