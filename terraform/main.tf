@@ -11,7 +11,7 @@ provider "google" {
   credentials = file(var.credentials)
   project     = var.project
   region      = var.region
-} 
+}
 
 resource "google_storage_bucket" "auto-expire" {
   name          = "${var.project}_${var.gcs_bucket_name}"
@@ -33,3 +33,4 @@ resource "google_bigquery_dataset" "us_accidents_dataset" {
   dataset_id = var.bq_dataset_name
   location   = var.location
 }
+
