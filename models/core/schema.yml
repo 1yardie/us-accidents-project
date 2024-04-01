@@ -1,0 +1,41 @@
+version: 2
+
+sources:
+  - name: production
+    database: us-accidents-418522
+    schema: us_accidents
+    tables:
+      - name: accidents
+        description: "Table containing information about accidents"
+        columns:
+          - name: Description
+            description: "Description of the accident"
+            data_type: string
+
+          - name: City
+            description: "City where the accident occurred"
+            data_type: string
+
+          - name: State
+            description: "State where the accident occurred"
+            data_type: string
+
+          - name: Timezone
+            description: "Timezone of the accident location"
+            data_type: string
+
+          - name: Temperature_F
+            description: "Temperature at the time of the accident, rounded to the nearest degree Fahrenheit"
+            data_type: numeric
+
+          - name: Visibility_Miles
+            description: "Visibility in miles at the time of the accident, rounded to the nearest mile"
+            data_type: numeric
+
+          - name: Weather_Condition
+            description: "Weather condition at the time of the accident"
+            data_type: string
+
+          - name: Severity
+            description: "Severity level of the accident"
+            data_type: numeric
