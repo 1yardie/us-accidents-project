@@ -4,6 +4,11 @@ Link to Dashboard: [Link](https://lookerstudio.google.com/reporting/5b6c6190-8d7
 ## Overview
 The goal of the US Accidents Data Analysis Project is to use Data Engineering concepts to automate a workflow to download the US Accidents Dataset (February 2016 to March 2023) from Kaggle to Google Cloud Storage, transform and aggregate the data using DBT and analyze it using Looker Studio. The ELT (Extract, Load and Transform) methodology is used through out this project where data is extracted, loaded and then transformed in the Data Warehouse. 
 
+## Pipeline 
+
+![Google Cloud Virtual Machine (1)](https://github.com/1yardie/us-accidents-project/assets/162933913/e24f574c-d8d0-484c-b92c-de04d138da0a)
+
+
 ## Technologies
 
 The project utilizes a range of cutting-edge technologies and tools:
