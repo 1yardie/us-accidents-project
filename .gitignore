@@ -7,7 +7,8 @@
 *.ipynb
 *data/
 *.ipynb*
-
+*ingestion.py
+*.sql
 # Local .terraform directories
 **/.terraform/*
 
