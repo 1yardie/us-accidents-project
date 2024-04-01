@@ -1,7 +1,7 @@
 {% macro get_avg_visibility(Visibility_mi_) %}
     SELECT
         State,
-        AVG(COALESCE(CAST(Visibility_mi_ AS NUMERIC), 0)) AS median_vis
+        AVG(COALESCE(CAST(Visibility_mi_ AS NUMERIC), 0)) AS avg_vis
     FROM
         {{ source("staging", "accidents") }}
     WHERE
