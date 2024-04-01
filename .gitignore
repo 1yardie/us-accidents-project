@@ -6,9 +6,9 @@
 *__pycache__/
 *.ipynb
 *seeds/
-*analysis
-*snapshots
-*tests
+*analysis/
+*snapshots/
+*tests/
 *data/
 *.ipynb*
 *ingestion.py
