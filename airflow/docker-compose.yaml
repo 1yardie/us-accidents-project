@@ -77,8 +77,8 @@ x-airflow-common:
     # TODO: Please change GCP_PROJECT_ID & GCP_GCS_BUCKET, as per your config
     GCP_PROJECT_ID: 'us-accidents-418522'
     GCP_GCS_BUCKET: 'us-accidents-418522_data_lake'
-    KAGGLE_USERNAME: "hakeemjgreen"
-    KAGGLE_KEY: "491723fdcc4fa5ff1ce5d8d73d25ccc7" 
+    KAGGLE_USERNAME: ""
+    KAGGLE_KEY: "" 
 
   volumes:
     - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags

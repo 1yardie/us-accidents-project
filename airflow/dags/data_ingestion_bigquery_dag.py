@@ -1,10 +1,12 @@
+# Import libraries and modules
 import datetime
-
 from airflow import DAG
 from airflow.operators.empty import EmptyOperator
 from airflow.operators.python import PythonOperator
 from google.cloud import bigquery
 
+
+# Upload data to BigQuery
 def upload_to_bigquery_callable():
 
     # Construct a BigQuery client object.
@@ -30,13 +32,13 @@ def upload_to_bigquery_callable():
     # Wait for the job to complete.
     load_job.result()  
 
-    # Retrieve information about the destination table.
+    # Get information about the destination table.
     destination_table = client.get_table(table_id)
 
     # Print the number of rows loaded into the destination table.
     print("Loaded {} rows.".format(destination_table.num_rows))
 
-
+# DAG for data ingestion into BigQuery
 with DAG(
     dag_id="data_ingestion_bigquery_dag",
     start_date=datetime.datetime(2024, 1, 1),

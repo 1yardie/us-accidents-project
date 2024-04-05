@@ -1,19 +1,14 @@
+# Importing libraries and modules
 from datetime import datetime
-import os
-
 from airflow import DAG
-from airflow.operators.python import PythonOperator
 from airflow.operators.bash import BashOperator
-import opendatasets as od
 
 import os 
-from google.cloud import storage
-from google.cloud import bigquery
 
+# Setting AIRFLOW_HOME environment variable
 AIRFLOW_HOME = os.environ.get("AIRFLOW_HOME", "/opt/airflow/")
 
-
-
+# Defining a local workflow using Airflow
 local_workflow = DAG(
     dag_id="data_ingestion_gcs_local",
     default_args={
@@ -23,6 +18,7 @@ local_workflow = DAG(
     }
 )
 
+# Defining tasks within the DAG
 with local_workflow: 
 
     #Download the files from Kaggle
