@@ -26,6 +26,7 @@ def upload_to_gcs_callable():
             blob.upload_from_filename(local_file_path)
             print(f"File {local_file_path} uploaded to {local_file_path} in bucket {bucket_name}.")
 
+# DAG for data ingestion into GCS Bucket
 with DAG(
     dag_id="data_ingestion_gcs_dag",
     start_date=datetime.datetime(2024, 1, 1),
@@ -33,11 +34,7 @@ with DAG(
 ):
     upload_to_gcs = PythonOperator(
         task_id="upload_to_gcs",
-        python_callable=upload_to_gcs_callable,
-        # op_kwargs: Optional[Dict] = None,
-        # op_args: Optional[List] = None,
-        # templates_dict: Optional[Dict] = None
-        # templates_exts: Optional[List] = None
+        python_callable=upload_to_gcs_callable
     )
 
 upload_to_gcs
